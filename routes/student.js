@@ -12,7 +12,7 @@ router.get('/createstudentaccount', async(req, res) => {
 
     const students = await studentmodel.find().lean();
 
-
+/*
     await studentmodel.create({
         username: 'Bassant',
         password: 'cs',
@@ -30,7 +30,7 @@ router.get('/createstudentaccount', async(req, res) => {
         password: 'cs',
         id: '200208',
 
-    });    
+    });    */
     
     res.render('students/studentpage',{ students });
 });

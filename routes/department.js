@@ -30,6 +30,7 @@ await deptmodel.create({
     
 
 });
+
 res.render('departments/deptpage',{ departments });
 });
 

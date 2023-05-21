@@ -1,19 +1,18 @@
 import { Router } from "express";
 
-import deptmodel from "../models/dept.js";
-import subjectmodel from "../models/subject.js";
+
+import { create, index,store } from "./controllers/subject.js";
 const router = new Router();
 
 router.get('/subject', (req , res)=>{
-res.render('subjects/subjectpage');
+res.render('subjects/create');
 });
 
-router.get('/createsubject', async(req, res) => {
+router.get('/', index);
+router.get('/create', create);
 
-    const subjects = await subjectmodel.find().lean();
-
-
-    await subjectmodel.create({
+router.post('/',store);
+  /*  await subjectmodel.create({
         name: 'java',
         code: 'cs',
         pre_requisite: 'oop',
@@ -31,9 +30,9 @@ router.get('/createsubject', async(req, res) => {
         pre_requisite: 'system-1',
 
     });    
-    
-    res.render('subjects/subjectpage',{ subjects });
-});
+    */
+
+
 
 
 export default router;

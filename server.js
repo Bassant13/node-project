@@ -5,15 +5,16 @@ dotenv.config();
 
 import mongoose from "mongoose";
 
-
 mongoose.connect(process.env.mongoconurl)
 
-import subjectrouter from './routes/sub.js';
+
+import subjectrouter from './routes/subject.js';
 
 import departmentrouter from './routes/department.js';
 import studentrouter from './routes/student.js'
 const app = express();
 
+app.use(express.urlencoded({extended: true}));
 
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
