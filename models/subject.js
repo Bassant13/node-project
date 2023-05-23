@@ -10,6 +10,11 @@ const subject=new Schema({
     type: String,
     required: true,
 },
+    deptpartment: {
+    type: Schema.Types.ObjectId,
+    required: true,
+    ref: "dept"
+},
 
     pre_requisite: {
     type: String,

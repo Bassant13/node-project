@@ -1,8 +1,17 @@
 <h1>subjects</h1>
-<!---
+
+<div class="my-2">
+  <a href = "/subjects/create" >Add a new subject</a>
+</div>
+
 {{#each subjects}}
 
-  <h2>name: <h3>{{name}}</h3></h2>
-  <h2>pre_requisite: <h3>{{pre_requisite}}</h3></h2>
+<div>
+  <a href="/subjects/{{_id}}">
+  
+  {{name}}
 
-{{/each}}--->
+  </a>
+  </div>
+
+{{/each}}

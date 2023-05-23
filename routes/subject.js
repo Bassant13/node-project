@@ -1,7 +1,7 @@
 import { Router } from "express";
 
 
-import { create, index,store } from "./controllers/subject.js";
+import { create, index,store } from "../controllers/subject.js";
 const router = new Router();
 
 router.get('/subject', (req , res)=>{
