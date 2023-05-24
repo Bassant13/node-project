@@ -1,37 +1,16 @@
 import { Router } from "express";
+import { create, index,store ,show,edit,update,deleteOne} from "../controllers/department.js";
 
-import deptmodel from "../models/dept.js";
+import deptmodel from "../models/department.js";
 import subjectmodel from "../models/subject.js";
 const router = new Router();
 
-router.get('/department', (req , res)=>{
-res.render('departments/deptpage');
-});
 
-router.get('/createdept', async(req, res) => {
-
-    const departments = await deptmodel.find().lean();
-
-await deptmodel.create({
-    name: 'Computer Science',
-    code: 'CS',
-    
-
-});
-await deptmodel.create({
-    name: 'Information Systems',
-    code: 'IS',
-    
-
-});
-await deptmodel.create({
-    name: 'Information Technology',
-    code: 'IT',
-    
-
-});
-
-res.render('departments/deptpage',{ departments });
-});
-
+router.get('/',index);
+router.get('/create', create);
+router.post('/',store);
+router.get('/:_id/edit',edit);
+router.put('/:_id',update);
+router.delete('/:_id',deleteOne);
+router.get('/:_id',show);
 export default router;

@@ -1,0 +1,37 @@
+<h1>Edit</h1>
+
+<form action="/subject/{{subject._id}}?_method=PUT" method="post">
+
+<div>
+<label for="">Subject Name</label>
+<input type="text" class="form-control" name="name" value="{{department.name}}">
+
+</div>
+
+<div>
+<label for="">Subject Code</label>
+<input type="text" class="form-control" name="id" value="{{subject.id}}">
+
+</div>
+
+<div>
+<label for="">Department</label>
+<select  id="" class="form-select" name= "department" value="{{subject.department}}">
+{{#each departments}}
+
+<option value="{{_id}}">{{name}}</option>
+
+{{/each}}
+</select>
+</div>
+
+<div>
+<label for="">Pre Requisite</label>
+<input type="text" class="form-control" name="pre_requisite" value="{{subject.pre_requisite}}">
+
+</div>
+ <div>
+    <button class="btn btn-success" type="submit">save</button>
+ </div>
+
+</form>

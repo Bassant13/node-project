@@ -1,17 +1,26 @@
 <h1>subjects</h1>
 
 <div class="my-2">
-  <a href = "/subjects/create" >Add a new subject</a>
+  <a href = "/subject/create" >Add a new subject</a>
 </div>
 
 {{#each subjects}}
 
-<div>
-  <a href="/subjects/{{_id}}">
+<divclass="d-flex justify-content-between">
+  <a href="/subject/{{_id}}">
   
   {{name}}
 
   </a>
+      <div>
+    <a href="/subject/{{_id}}/edit">
+    Edit 
+    </a>
+    <form action="/subject/{{_id}}?_method=DELETE" method="post">
+     <button type="submit">Delete</button>
+
+    </form>
+  </div>
   </div>
 
 {{/each}}

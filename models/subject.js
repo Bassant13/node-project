@@ -3,22 +3,27 @@ import { Schema , model } from "mongoose";
 const subject=new Schema({
     name: {
         type: String,
-        required: true,
+        required: false,
     },
     
-    code: {
+    id: {
     type: String,
-    required: true,
+    required: false,
 },
-    deptpartment: {
+    department: {
     type: Schema.Types.ObjectId,
-    required: true,
-    ref: "dept"
+    required: false,
+    ref: 'department'
 },
 
     pre_requisite: {
     type: String,
-    required: true,
+    required: false,
+},  
+    doctor: {
+    type: Schema.Types.ObjectId,
+    required: false,
+    ref: 'doctor'
 },
 
 });

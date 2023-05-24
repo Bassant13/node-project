@@ -1,6 +1,6 @@
 import { Schema , model} from "mongoose";
 
-const dept=new Schema({
+const department =new Schema({
     name: {
         type: String,
         required: true,
@@ -13,5 +13,5 @@ const dept=new Schema({
 });
 
 
-const deptmodel = model('dept', dept);
+const deptmodel = model('department', department);
 export default deptmodel;
